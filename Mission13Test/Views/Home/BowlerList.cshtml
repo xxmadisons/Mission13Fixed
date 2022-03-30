@@ -1,9 +1,24 @@
 ﻿@{
-    ViewData["Title"] = "BowlerList";
+    ViewData["Title"] = "Bowler List";
 
 }
 
 @model List<Bowler>
+
+    <div>
+        <p>Sort By Team:</p>
+        <button class="dropbtn">Marlins</button>
+        <button class="dropbtn">Sharks</button>
+        <button class="dropbtn">Terrapins</button>
+        <button class="dropbtn">Barracudas</button>
+        <button class="dropbtn">Dolphins</button>
+        <button class="dropbtn">Orcas</button>
+        <button class="dropbtn">Manatees</button>
+        <button class="dropbtn">Swordfish</button>
+        <button class="dropbtn">Huckleberrys</button>
+        <button class="dropbtn">MintJuleps</button>
+      
+    </div>
 
 <table class="table table-bordered table-striped">
 
@@ -25,26 +40,28 @@
 
     <tbody>
         @foreach (var b in Model)
-            {
-        <tr>
-            <td>@b.BowlerID</td>
-            <td>@b.BowlerFirstName</td>
-            <td>@b.BowlerMiddleInit</td>
-            <td>@b.BowlerLastName</td>
-            <td>@b.BowlerAddress</td>
-            <td>@b.BowlerCity</td>
-            <td>@b.BowlerState</td>
-            <td>@b.BowlerZip</td>
-            <td>@b.BowlerPhoneNumber</td>
+        {
+            <tr>
+                <td>@b.BowlerID</td>
+                <td>@b.BowlerFirstName</td>
+                <td>@b.BowlerMiddleInit</td>
+                <td>@b.BowlerLastName</td>
+                <td>@b.BowlerAddress</td>
+                <td>@b.BowlerCity</td>
+                <td>@b.BowlerState</td>
+                <td>@b.BowlerZip</td>
+                <td>@b.BowlerPhoneNumber</td>
 
 
-            <td>
-            <td><a asp-controller="Home" asp-action="Edit" asp-route-bowlerid="@b.BowlerID">Edit</a></td>
-            <td><a asp-controller="Home" asp-action="Delete" asp-route-bowlerid="@b.BowlerID">Delete</a></td>
+                <td>
+                <td><a asp-controller="Home" asp-action="Edit" asp-route-bowlerid="@b.BowlerID">Edit</a></td>
+                <td><a asp-controller="Home" asp-action="Delete" asp-route-bowlerid="@b.BowlerID">Delete</a></td>
 
 
-        </tr>
-            }
+            </tr>
+        }
+
+        
     </tbody>
 
 </table>

@@ -55,6 +55,11 @@ namespace Mission13Test
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("typepage",
+                    "{teamID}",
+                    new { Controller = "Home", action = "Index" });
+
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{bowlerid?}");
