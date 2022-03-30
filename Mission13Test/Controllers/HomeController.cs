@@ -26,12 +26,6 @@ namespace Mission13Test.Controllers
         }
 
 
-
-        public IActionResult Podcast()
-        {
-            return View();
-        }
-
         [HttpGet]
 
         public IActionResult EnterBowlers()
@@ -70,13 +64,13 @@ namespace Mission13Test.Controllers
 
 
         [HttpGet]
-        public IActionResult Edit (int applicationid)
+        public IActionResult Edit (int bowlerid)
         {
             ViewBag.Teams = BowlerContext.Teams.ToList();
 
-            var application = BowlerContext.Bowlers.Single(x => x.BowlerID == applicationid);
+            var bowl = BowlerContext.Bowlers.Single(x => x.BowlerID == bowlerid);
 
-            return View("EnterBowlers", application);
+            return View("EnterBowlers", bowl);
         }
 
         [HttpPost]
@@ -89,10 +83,10 @@ namespace Mission13Test.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete (int applicationid)
+        public IActionResult Delete (int bowlerid)
         {
-            var application = BowlerContext.Bowlers.Single(x => x.BowlerID == applicationid);
-            return View(application);
+            var bowl = BowlerContext.Bowlers.Single(x => x.BowlerID == bowlerid);
+            return View(bowl);
         }
 
         [HttpPost]
